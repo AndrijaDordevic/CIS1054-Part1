@@ -3,12 +3,11 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['username'] = $_POST['username'];
-    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['age'] = filter_var($_POST['age'], FILTER_VALIDATE_INT);
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     $_SESSION['username'] = $_GET['username'];
-    $_SESSION['age'] = $_GET['age'];
+    $_SESSION['age'] = filter_var($_GET['age'], FILTER_VALIDATE_INT);
 }
-
 
 ?>
 
