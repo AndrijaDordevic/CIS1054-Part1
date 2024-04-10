@@ -10,6 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Last Visit</title>
     <link rel="stylesheet" href="styles.css">
+    <li><a href="index.php">Back to main menu</a></li>
 </head>
 <body>
     <div class="container">
