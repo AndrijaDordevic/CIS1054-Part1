@@ -1,29 +1,34 @@
 <?php
 session_start();
 
+//Define username and password combinations for authentication
+$users = [
+    'user1' => 'password1',
+    'user2' => 'password2'
+];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['username'] = $_POST['username'];
-    $_SESSION['age'] = filter_var($_POST['age'], FILTER_VALIDATE_INT);
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $_SESSION['username'] = $_GET['username'];
-    $_SESSION['age'] = filter_var($_GET['age'], FILTER_VALIDATE_INT);
+    if ($_POST['action'] == 'signup') {
+        //Sign Up
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['password'] = filter_var($_POST['password'], FILTER_VALIDATE_INT);
+    } elseif ($_POST['action'] == 'login') {
+        //Log In
+        $username = $_POST['username'];
+        $password = $_POST['password']; //Password input from the form
+        
+        //Check if the provided username and password are correct
+        if (array_key_exists($username, $users) && $users[$username] === $password) {
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+        } else {
+            echo "Wrong username or password, please try again";
+        }
+    }
 }
 
-?>
+//Redirection to their account after processing
+header("Location: parameters_stored.php");
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parameters Stored</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Parameters Stored Successfully!</h1>
-        <p>Your parameters have been stored.</p>
-        <a href="index.php">Return To Main Page</a>
-    </div>
-</body>
-</html>
+exit();
+?>
