@@ -1,16 +1,19 @@
+<!-- index.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Request Parameters</title>
+    <title>User Authentication</title>
     <link rel='stylesheet' href='styles.css'>
 </head>
 <body>
-    <h1>Process Request Parameters</h1>
+    <h1>User Authentication</h1>
     <form action="processrequest.php" method="post">
+        <input type="radio" name="action" value="signup" checked> Sign Up<br>
+        <input type="radio" name="action" value="login"> Log In<br>
         Username: <input type="text" name="username"><br>
-        Age: <input type="text" name="age"><br>
+        Password: <input type="text" name="password"><br>
         <input type="submit" value="Submit">
     </form>
 </body>
