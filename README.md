@@ -1,9 +1,12 @@
 # CIS1054-Part1
 Gary Ken Micallef
+
 Andrija Djordjevic
+
 Karl Cassar
 
 Part 1 Task 1
+
 HTML is the foundation of basically every web page. It’s how we tell browsers to structure content into paragraphs, headings, images, links, lists, forms, tables, buttons, and more. HTML is the front end of the code because it is the receiving end of the user.  Whilst PHP is the actual bulk of the code. This is because it allows code to be dynamically typed with other sources like a database. From webpages being dynamically typed allows plenty of advantages such as easier to update code, and more readable code. PHP is the back end of the website since it isn’t noticeable by the user, however it allows the casing of the HTML to function dynamically with other files.
 
 ![image](https://github.com/AndrijaDordevic/CIS1054-Part1/assets/150530185/bae45326-7aba-4dce-8ff8-43fbbaea6219)
