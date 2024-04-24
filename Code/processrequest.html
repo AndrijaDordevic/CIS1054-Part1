@@ -1,20 +1,32 @@
-<!-- index.php -->
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['age'] = filter_var($_POST['age'], FILTER_VALIDATE_INT);
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $_SESSION['username'] = $_GET['username'];
+    $_SESSION['age'] = $_GET['age'];
+    $_SESSION['age'] = filter_var($_GET['age'], FILTER_VALIDATE_INT);
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Authentication</title>
-    <link rel='stylesheet' href='styles.css'>
+    <title>Parameters Stored</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>User Authentication</h1>
-    <form action="processrequest.php" method="post">
-        <input type="radio" name="action" value="signup" checked> Sign Up<br>
-        <input type="radio" name="action" value="login"> Log In<br>
-        Username: <input type="text" name="username"><br>
-        Password: <input type="text" name="password"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <h1>Parameters Stored Successfully!</h1>
+        <p>Your parameters have been stored.</p>
+        <a href="index.php">Return To Main Page</a>
+    </div>
 </body>
 </html>
