@@ -16,7 +16,6 @@
             <li><a href="serverdt.php">Get Current Date and Time</a></li>
             <li><a href="lastvisit.php">Track Last Visit</a></li>
             <li><a href="processrequest.html">Capture Request Parameters</a></li>
-            <li><a href="readsession.php">Read Session Variables</a></li>
         </ul>
     </nav>
 
